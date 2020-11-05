@@ -1,0 +1,286 @@
+/* -----KEEP APP-----  */
+
+.keepApp-container {
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-height: 82.5vh;
+}
+
+/* ----SEARCH INPUT----- */
+
+.keepApp-input-add-note-wrapper>* {
+    border: 0;
+    background-color: #fff;
+    font-size: 1.2rem;
+    padding: 10px;
+    outline: 0;
+}
+
+.keepApp-add-note {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    background-color: #fff;
+    outline: 0;
+    border: none;
+}
+
+.keepApp-input-add-note {
+    outline: none;
+    border: 0;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.keepApp-input-add-form {
+    background-color: #fff;
+    padding: 2px;
+    display: inline;
+    flex-basis: 50%;
+}
+
+.keepApp-input-add-form>* {
+    background-color: #fff;
+}
+
+/* ----NOTES LIST----- */
+
+.keepApp-notes-list {
+    margin-top: 2rem;
+    padding: 0;
+}
+
+.keepApp-notes-section>* {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-auto-flow: dense;
+    gap: 1.6rem;
+}
+
+@media (max-width: 880px) {
+    .keepApp-notes-section>* {
+        grid-auto-rows: auto
+    }
+}
+
+.keepApp-note {
+    cursor: pointer;
+    min-height: 16rem;
+    padding: 0.5em;
+    border: solid 1px grey;
+    border-radius: 3px;
+    white-space: nowrap;
+    transition: 0.7s;
+    overflow: hidden;
+    padding: 1rem;
+    grid-column: 2 / span 2
+}
+
+/* ---NOTE TEXT--- */
+
+.note-text {
+    padding: 1rem;
+}
+
+.keepApp-note .note-text {
+    text-overflow: ellipsis;
+    padding: 1rem;
+}
+
+.note-text pre {
+    font-size: 1.3rem;
+    margin: 0;
+    padding: 0;
+    overflow-x: scroll;
+    width: 100%;
+}
+
+/* ---NOTE IMG--- */
+
+.note-img {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+}
+
+.note-img>h2 {
+    line-height: 0;
+    margin: 0 0 1rem 0;
+    flex: 0 0 10%;
+}
+
+.note-img>img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* ---NOTE VIDEO--- */
+
+.note-video {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+}
+
+.note-video>iframe {
+    flex: 0 0 80%;
+}
+
+.note-video>h2 {
+    line-height: 0;
+    margin: 0 0 1rem 0;
+}
+
+/* ---NOTE AUDIO--- */
+
+.note-audio {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+}
+
+.note-audio>h2 {
+    line-height: 0;
+    margin: 0 0 1.2rem 0;
+}
+
+.note-audio>iframe {
+    flex: 0 0 80%;
+}
+
+/* ---NOTE TODO--- */
+
+.note-todo>h2 {
+    line-height: 0;
+    margin: 0 0 1rem 0;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.note-todo>.keepApp-todo {
+    display: flex;
+}
+
+.note-todo>.keepApp-todo>* {
+    font-size: 1.2rem;
+}
+
+.note-todo>.keepApp-todo>p {
+    margin: 0;
+    padding: 0.2rem;
+}
+
+.todo-done {
+    text-decoration: line-through
+}
+
+.note-todo>.keepApp-todo>button {
+    background-color: inherit;
+    border: 0;
+    outline: 0;
+    margin: 0;
+}
+
+/* --------NOTES EDIT BTNS------ */
+
+.keepApp-edit-btns {
+    display: flex;
+    align-items: end;
+    width: 1.6rem;
+}
+
+.keepApp-edit-btns>* {
+    font-size: 1.2rem;
+    border: none;
+    background-color: inherit;
+    border-radius: 50%;
+    margin-right: 5px;
+    opacity: 40%;
+    transition: 0.5s;
+    outline: 0;
+    padding: 0.2rem;
+}
+
+.keepApp-edit-btns>*:hover {
+    cursor: pointer;
+    opacity: 100%;
+    font-size: 1.7rem;
+    transition: 0.5s
+}
+
+.keepApp-edit-btns>.keepApp-pinned-btn {
+    opacity: 80%;
+    transform: translate(210px, -275px)rotate(10deg);
+    font-size: 2rem;
+}
+
+.keepApp-edit-link-input {
+    display: none;
+    background-color: #fff;
+    border: 0;
+    opacity: 80%;
+    border-radius: 3px;
+    width: 0rem;
+    font-size: 1rem;
+    transition: 1s;
+    position: fixed;
+    height: 2rem;
+}
+
+.keepApp-edit-link-input:hover {
+    display: block;
+    width: 10em;
+    transition: 2s;
+}
+
+/* ----EDITING MODAL----- */
+
+.keepApp-note-modal {
+    height: 30vh;
+    padding: 0.5em;
+    border: solid 1px grey;
+    border-radius: 3px;
+    max-width: 40vw;
+}
+
+.keepApp-note-modal textarea {
+    background-color: rgba(117, 56, 56, 0.15);
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 12em;
+}
+
+.keepApp-modal-hide {
+    display: none;
+}
+
+.keepApp-modal-wrapper {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.keepApp-modal-content {
+    position: relative;
+    margin: 25% 25%;
+    padding: 0;
+}
+
+.keepApp-modal-content img {
+    max-width: 100%;
+    object-fit: contain;
+}
